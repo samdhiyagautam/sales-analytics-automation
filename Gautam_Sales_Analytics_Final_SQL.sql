@@ -1,4 +1,4 @@
--- GAUTAM | DATA ANALYST PORTFOLIO
+ DATA ANALYST PORTFOLIO
 -- PROJECT: Sales Analytics & Automation System
 -- PostgreSQL 18 | Simulated E-commerce Dataset | 3,000 orders
 
