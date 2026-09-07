@@ -102,7 +102,7 @@ Automated Daily Report
 ## Portfolio Links
 
 - 📊 [View Live Dashboard](https://docs.google.com/spreadsheets/d/1LSBwi-Up503sTW-ACgDT7O3uTLTWZXlnKxnTLOVmsIA/edit?usp=sharing)
-- 💻 [GitHub Profile](https://github.com/samdhiya gautam)
+- 💻 - 💻 [GitHub Profile](https://github.com/samdhiya gautam)
 - 💼 [LinkedIn](https://www.linkedin.com/in/connectwithgautam)
 - 🌐 [Live Portfolio](https://samdhiyagautam.github.io/gautam-data-analyst-portfolio/)
 
