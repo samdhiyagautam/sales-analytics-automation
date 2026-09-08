@@ -1,113 +1,120 @@
-# Sales Analytics & Automation System
+ Sales Analytics & Automation System
 
-An end-to-end portfolio project demonstrating practical Data Analyst skills across SQL, PostgreSQL, Excel/Google Sheets, dashboarding, and Google Apps Script automation.
+End-to-end e-commerce analytics pipeline** — from raw order data to an automated, decision-ready sales dashboard.
 
-## Business Problem
+`PostgreSQL 18` `SQL` `Google Sheets` `Excel` `Apps Script` `GitHub Pages`
 
-Management needs a single analytical view of sales performance across revenue, profit, products, categories, geography, sales channels, customer segments, monthly trends, returns, and cancellations.
+> Simulated e-commerce dataset · 3,000 orders · 2025
 
-## Tools
+---
 
-- PostgreSQL 18 / pgAdmin 4
-- SQL
-- Excel / Google Sheets
-- Google Apps Script
-- GitHub
+📌 Overview
 
-## Dataset
+This project demonstrates a full analytics workflow for a simulated e-commerce business — converting raw sales data into decision-ready insights using PostgreSQL/SQL for analysis, Excel/Google Sheets for dashboarding, and Google Apps Script for automated reporting.
 
-This project uses a simulated e-commerce dataset containing 3,000 order records.
+ 🎯 Business Problem
 
-> This dataset is simulated for portfolio and interview practice and is not confidential or real company data.
+Management needed a single analytical view of sales performance: revenue and profitability, product and category performance, geographic performance, sales channels, customer segments, monthly trends, and operational losses from returns and cancellations.
 
-## Executive KPIs
+🗂️ Dataset
+
+3,000 simulated e-commerce order records with fields for order date, customer, location, segment, product, category, quantity, pricing, revenue, cost, profit, channel, payment method, and order status.
+
+ 🛠️ Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| PostgreSQL 18 / pgAdmin 4 | Database, table creation, SQL analysis |
+| SQL | KPI, category, product, trend, geography, channel and segment analysis |
+| Excel / Google Sheets | Analysis tables, KPIs and management dashboard |
+| Google Apps Script | Automated KPI report and scheduled email workflow |
+| GitHub + GitHub Pages | Portfolio code and live hosting |
+
+📊 Executive KPIs
 
 | Metric | Result |
-|---|---:|
-| Total Records | 3,000 |
-| Delivered Orders | 1,999 |
-| Delivered Units | 4,009 |
-| Delivered Revenue | ₹5,15,99,556 |
-| Delivered Profit | ₹1,66,17,503.48 |
-| Profit Margin | 32.20% |
-| Average Order Value | ₹25,812.68 |
-| Return Rate | 16.07% |
-| Cancellation Rate | 17.30% |
+|---|---|
+| Total records | 3,000 |
+| Delivered orders | 1,999 |
+| Delivered units | 4,009 |
+| Delivered revenue | ₹5,15,99,556 |
+| Delivered profit | ₹1,66,17,503.48 |
+| Profit margin | 32.20% |
+| Average Order Value (AOV) | ₹25,812.68 |
+| Return rate | 16.07% |
+| Cancellation rate | 17.30% |
 
-## SQL Analysis
+## 🔍 SQL Analysis Performed
 
 - Data validation and order-status distribution
-- Executive KPIs
-- Average Order Value
-- Category performance
+- Executive KPIs: orders, units, revenue, profit, margin
+- Average Order Value overall and by customer segment
+- Revenue, profit and margin by category
 - Top products by revenue
-- Product profitability and margin
+- Product profitability and margin ranking
 - Monthly revenue and profit trend
-- Month-over-month growth using `LAG()`
-- State performance
+- Month-over-month revenue growth using the `LAG()` window function
+- State-level performance
 - Sales-channel performance
 - Customer-segment performance
 - Return and cancellation analysis
 
-## Key Insights
+ 💡 Key Business Insights
 
-- Electronics is the largest revenue-driving category.
-- Accessories has the strongest category-level profit margin.
-- Laptop Pro 14 is the leading revenue-generating product.
-- Website is the strongest delivered-revenue sales channel.
-- Uttar Pradesh is the leading state by delivered revenue in this dataset.
-- Small Business customers have the highest AOV.
-- Consumer customers have the highest delivered order volume.
-- Returns and cancellations together represent 33.37% of all orders.
-- Monthly sales show meaningful volatility, including a strong April rebound and a May decline.
+- **Electronics** is the largest revenue-driving category
+- **Accessories** has the strongest category-level profit margin (~33.22%)
+- **Laptop Pro 14** is the leading revenue-generating product
+- **Website** is the strongest delivered-revenue sales channel
+- **Uttar Pradesh** leads by delivered revenue among states
+- **Small Business** customers have the highest AOV (₹28,189.86); **Consumer** has the highest order volume
+- Returns + cancellations together account for **33.37%** of all orders — a key operational risk area
+- April showed a strong rebound (**+34.75%** vs March), while May saw a sharp decline (**-22.82%** vs April)
 
-## Dashboard
+## 📈 Dashboard
 
-The dashboard includes:
-- Executive KPI cards
-- Revenue by category
-- Monthly revenue trend
-- Revenue by sales channel
-- Revenue by customer segment
-- Top 10 products by revenue
-- Returned vs cancelled orders
+A management dashboard brings the analysis into a single view: KPI cards, category revenue, monthly revenue trend, sales-channel performance, customer-segment performance, top 10 products, and returned-vs-cancelled orders.
 
-## Automation
+*(screenshot: `assets/dashboard.png`)*
 
-Google Apps Script reads the sales data from Google Sheets and:
+ ⚙️ Automation Workflow
 
-1. Calculates core KPIs
-2. Identifies top product, category and channel
-3. Refreshes an `Automation_Report` sheet
-4. Sends an automated HTML email report
-5. Runs through a daily time-driven trigger
+Google Apps Script reads the `Raw_Data` sheet → validates and calculates KPIs and top performers → refreshes an `Automation_Report` sheet → sends an HTML email report. A time-driven trigger runs this daily.
 
-## Workflow
-
-```text
-Raw Sales Data
-      ↓
-PostgreSQL + SQL Analysis
-      ↓
-Excel / Google Sheets Analysis
-      ↓
-Management Dashboard
-      ↓
-Google Apps Script Automation
-      ↓
-Automated Daily Report
+```
+Raw sales data (Sheets) → Apps Script validates & calculates KPIs
+  → Automation_Report refreshed → Daily HTML email report
+  → Triggered automatically on a schedule
 ```
 
+*(script: `automation/kpi_report.gs`)*
 
-## Portfolio Links
+## ✅ Recommendations
 
-- 📊 [View Live Dashboard](https://docs.google.com/spreadsheets/d/1LSBwi-Up503sTW-ACgDT7O3uTLTWZXlnKxnTLOVmsIA/edit?usp=sharing)
-- 💻 [GitHub Profile](https://github.com/samdhiyagautam)
-- 💼 [LinkedIn](https://www.linkedin.com/in/connectwithgautam)
-- 🌐 [Live Portfolio](https://samdhiyagautam.github.io/gautam-data-analyst-portfolio/)
+1. Prioritise high-value Small Business customers with targeted bundles and higher-ticket offers
+2. Protect Electronics' revenue leadership while testing margin-improvement in lower-margin categories/channels
+3. Review Amazon channel economics — margin trails other major channels
+4. Investigate return and cancellation drivers by product, location and channel
+5. Use monthly trend monitoring as an early-warning signal for sharp performance swings
 
-## Author
+## 📁 Repository Structure
 
-**Gautam**  
-Aspiring Data Analyst  
-Email: gautamsamdhiya2000@gmail.com
+```
+sales-analytics-automation/
+├── README.md
+├── dataset/
+│   └── dataset.csv
+├── sql/
+│   └── sales_analytics.sql
+├── automation/
+│   └── kpi_report.gs
+└── assets/
+    ├── dashboard.png
+    ├── sql_query_result.png
+    └── automation_report.png
+```
+
+ 🔗 Links
+
+- **Dataset:** `dataset/dataset.csv`
+- **SQL Queries:** `sql/sales_analytics.sql`
+- **Live Dashboard/Report:** _add link once GitHub Pages is live_
